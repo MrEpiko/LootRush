@@ -1,0 +1,267 @@
+# Available PlaceholderAPI placeholders:
+
+# 1. mode - solo or team
+# 2. count - amount of players or teams
+# 3. first - Returns name of the first player/team
+# 4. first_points - Returns points of the first player/team
+# 5. second - Returns name of the second player/team
+# 6. second_points - Returns points of the second player/team
+# 7. third - Returns name of the third player/team
+# 8. third_points - Returns points of the third player/team
+# 9. mode_word - Returns either "team" or "" (in case that round is not started or that mode is set to SOLO)
+# 10. points - Amount of player/team's points
+# 11. coins - Amount of player's coins
+# 12. base - Player/team base coordinates
+# 13. lootdrop - Get seconds left before the next loot drop
+
+world: "world"
+
+# For team: Maximum players per team
+maximum-players: 16
+respawn-internal: 3
+coins-per-kill: 10
+permissions-message: "&cYou do not have the required permissions."
+friendly-fire: false
+post-end-waiting-interval: 5
+disable-inventory-actions: true
+tracker-identifier: ""
+# Applies to armor, tools and weapons
+unbreakable-items: true
+
+points-needed:
+  team: 150
+  solo: 50
+
+positions:
+
+  team:
+
+    team-1:
+
+      color: 255,255,255
+      color-name: WHITE
+      color-code: "&f"
+      x: 0
+      y: 0
+      z: 0
+      yaw: 0
+      pitch: 0
+
+    team-2:
+
+      color: 255,255,85
+      color-name: YELLOW
+      color-code: "&f"
+      x: 0
+      y: 0
+      z: 0
+      yaw: 0
+      pitch: 0
+
+  solo:
+
+    player-1:
+
+      x: 0
+      y: 0
+      z: 0
+      yaw: 0
+      pitch: 0
+
+    player-2:
+
+      x: 0
+      y: 0
+      z: 0
+      yaw: 0
+      pitch: 0
+
+  # {seconds}
+  generators:
+
+    generator-1:
+
+      item:
+        name: "&cThis is just a showcase item"
+        material: WATCH
+        amount: 1
+        lore:
+          - "Very good showcase?"
+      points: 1
+      interval: 5
+      x: 0
+      y: 0
+      z: 0
+      hologram-messages:
+        - "&eWatch generator!"
+        - "Next drop in {seconds} seconds!"
+
+    generator-2:
+
+      item:
+        name: "&cThis is just a showcase item"
+        material: WATCH
+        amount: 1
+        lore:
+          - "Very good showcase?"
+      points: 1
+      interval: 5
+      x: 0
+      y: 0
+      z: 0
+      hologram-messages:
+        - "&eWatch generator!"
+        - "Next drop in {seconds} seconds!"
+
+  spectator-room:
+
+    x: 0
+    y: 0
+    z: 0
+    yaw: 0
+    pitch: 0
+
+  respawn-room:
+
+    x: 0
+    y: 0
+    z: 0
+    yaw: 0
+    pitch: 0
+
+messages:
+
+  # Global messages
+
+  team-round-start: "&eRound has started!"
+  solo-round-start: "&eRound has started!"
+
+  # {first}, {second}, {third}, {first_points}, {second_points}, {third_points}
+  team-round-end: "&eRound has ended!"
+  solo-round-end: "&eRound has ended!"
+
+  # {x}, {y}, {z}
+  loot-drop-spawned: "&eLoot drop has spawned at {x}, {y}, {z}!"
+
+  # Private messages
+
+  # {item}, {price}
+  shop-purchase: "&eYou have successfully purchased {item} &efor {price}&e!"
+
+  # {item}, {missing}
+  shop-failure: "&cYou are missing {missing} &ccoins in order to buy {item}&c."
+
+  shop-duplicated-armor: "&cYou already have that armor piece!"
+  shop-not-available: "&cThis shop is not available at the moment!"
+
+  event-not-started: "&cEvent did not start yet!"
+
+  registrations-closed: "&cRegistrations are currently closed."
+  player-cap-reached: "&cPlayer cap has been reached."
+  removed-from-event: "&eYou've been removed from the event."
+  successfully-registered: "&eYou've been successfully registered!"
+  already-registered: "&cYou are already registered."
+
+  # {points}, {item}, {amount}
+  point-score: "&e+ {points} (x{amount} {item}&e)"
+
+  # {coins}
+  coin-score: "&e+ {coins} &ecoins"
+
+  # {seconds}, {second/seconds}
+  respawn-message: "&eRespawning in {seconds} {second/seconds}&e..."
+
+  respawned-message: "&eRespawned!"
+
+  # Color code placeholders returns & along color code
+
+  # {victim}, {killer}, {victim_team_color_code}, {killer_team_color_code}
+  kill-message: "&e{victim_team_color_code}{victim} &7has been killed by &e{killer_team_color_code}{killer}&7!"
+
+  # {player}, {team_color_code}
+  death-message: "&e{team_color_code}{player} &7somehow managed to die."
+
+  # {player}, {team_color_code}
+  disconnect-message: "&e{team_color_code}{player} &7has disconnected."
+
+start-items:
+
+  # Only if armor is leather armor
+  sync-armor-with-color: true
+
+  team:
+
+    showcase-item:
+      name: "&cThis is just a showcase item"
+      material: WATCH
+      amount: 1
+      lore:
+        - "Very good showcase?"
+
+  solo:
+
+    showcase-item:
+      name: "&cThis is just a showcase item"
+      material: WATCH
+      amount: 1
+      lore:
+        - "Very good showcase?"
+
+shop:
+
+  gui-title: "LootRush shop"
+  # Size must be a multiplier of 9
+  gui-size: 9
+  close-shop-upon-failure: true
+  auto-equip-armor: true
+  shop-items:
+
+    # Make sure to include price in last row of each item's lore. For example:
+    # - "Price: 30 coins"
+    # Price format can be changed as long as it includes an integer number.
+
+    showcase-item:
+      name: "&cThis is just a showcase item"
+      material: WATCH
+      amount: 1
+      lore:
+        - "Very good showcase?"
+
+loot-drop:
+
+  enabled: true
+  interval: 30
+  material: BEACON
+  # Size must be a multiplier of 9
+  gui-size: 9
+  gui-title: "Loot drop!"
+  hologram-messages:
+    - "&eLoot drop!"
+
+  # Corners reference: https://prnt.sc/dN2F-LI6jMrA
+
+  # North-east, higher
+  first-corner:
+    x: 0
+    y: 0
+    z: 0
+
+  # South-west, lower
+  second-corner:
+    x: 0
+    y: 0
+    z: 0
+
+  items:
+
+    showcase-item:
+
+      spots: 2,3
+      amount: 1,5
+
+      item-configuration:
+        name: "&cThis is just a showcase item"
+        material: WATCH
+        amount: 1
+        lore:
+          - "Very good showcase?"

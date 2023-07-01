@@ -1,0 +1,64 @@
+name: LootRush
+author: MrEpiko
+version: 1.0.0
+api-version: 1.8.8
+main: me.mrepiko.lootrush.LootRush
+
+commands:
+
+  lootrushreload:
+    description: Reloads configuration.
+    usage: /lootrushreload
+
+  lootrushregister:
+    description: Register for event.
+    usage: /lootrushregister <username>
+    aliases:
+      - ltr
+
+  lootrushallowreg:
+    description: Open registrations.
+    usage: /lootrushallowreg <mode>
+    aliases:
+      - ltar
+
+  lootrushinfo:
+    description: Get information on current LootRush event.
+    usage: /lootrushinfo
+    aliases:
+      - lti
+
+  lootrushreboot:
+    description: Reboot LootRush.
+    usage: /lootrushreboot
+
+  lootrushstart:
+    description: Start LootRush round.
+    usage: /lootrushstart
+    aliases:
+      - lts
+
+  lootrushremove:
+    description: Remove player from competition.
+    usage: /lootrushremove <username>
+
+  lootrushshop:
+    description: Open shop GUI.
+    usage: /lootrushshop <type>
+
+  lootrushmessage:
+    description: Send configuration message.
+    usage: /lootrushmessage <message>
+    aliases:
+      - ltm
+
+permissions:
+
+  op:
+    description: Permission for operators.
+
+  info:
+    description: Grants access to /lootrushinfo.
+
+  debug:
+    description: Grants access to debug messages.
